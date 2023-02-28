@@ -6,13 +6,13 @@ export default {}
 *   创建数组的方式有多种
 * */
 
-// 方式1
+// 方式1 字面量方式
 let animalList: string[];
 animalList = ['cat', 'dog', 'mouse', 'wolf'];
 // animalList = ['pig', 111, false]
 
 
-// 方式2
+// 方式2 泛型数组
 let moneyList: Array<number>;
 moneyList = [10, 20, 30]
 // moneyList = [222, 333, false]
