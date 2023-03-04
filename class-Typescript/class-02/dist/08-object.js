@@ -23,5 +23,5 @@ function fn(obj) {
     // return undefined
     // return null
 }
-console.log(fn(new String("abc")));
-console.log(fn(String));
+// console.log(fn(new String("abc")));
+// console.log(fn(String));

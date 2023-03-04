@@ -29,5 +29,5 @@ function fn(obj: object): object{
     // return null
 }
 
-console.log(fn(new String("abc")));
-console.log(fn(String));
+// console.log(fn(new String("abc")));
+// console.log(fn(String));
