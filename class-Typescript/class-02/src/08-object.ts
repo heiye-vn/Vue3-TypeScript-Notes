@@ -18,7 +18,7 @@ obj = {
     age: 30
 };
 
-console.log(obj);
+// console.log(obj);
 
 
 function fn(obj: object): object{
@@ -29,5 +29,5 @@ function fn(obj: object): object{
     // return null
 }
 
-// console.log(fn(new String("abc")));
-// console.log(fn(String));
+console.log(fn(new String("abc")));
+console.log(fn(String));

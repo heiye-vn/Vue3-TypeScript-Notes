@@ -16,12 +16,12 @@ obj = {
     name: "张三",
     age: 30
 };
-console.log(obj);
+// console.log(obj);
 function fn(obj) {
     return obj;
     // return {}
     // return undefined
     // return null
 }
-// console.log(fn(new String("abc")));
-// console.log(fn(String));
+console.log(fn(new String("abc")));
+console.log(fn(String));
