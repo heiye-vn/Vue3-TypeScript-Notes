@@ -60,6 +60,6 @@ var Person;
     Person[Person["women"] = 'women'] = "women";
 })(Person || (Person = {}));
 ;
-let directions = [6 /* Up */, 7 /* Down */, 8 /* Left */, 9 /* Right */];
+let directions = [6 /* Directions.Up */, 7 /* Directions.Down */, 8 /* Directions.Left */, 9 /* Directions.Right */];
 console.log(directions);
 // 外部枚举是使用 declare enum 定义的枚举类型

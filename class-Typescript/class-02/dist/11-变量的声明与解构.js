@@ -52,23 +52,32 @@ let [, , two, , three] = [1, 2, 3, 4];
 *   元组解构：元组可以像数组一样被解构；解构变量获取相应元组元素的类型
 *
 * */
-let tuple = [7, 'hello', true];
+let tuple = [7, "hello", true];
 // let [a, b, c] = tuple;
 /*  对象解构  */
+// let arrObj: any[];
 let arrObj;
 arrObj = [
-    { name: "张柏芝", age: 45, marry: true },
+    { name: "张柏芝11", age: 45, marry: true },
     { name: '刘诗诗', age: 42, marry: true },
     { name: "欧阳娜娜", age: 27, marry: false },
     { name: '杨超越', age: 24, marry: false },
     { name: '', age: 999, marry: false }
 ];
 const nameList = arrObj.map(({ name }) => name).filter(Boolean);
-// console.log(nameList);
+let arrObj_ = [
+    { name: "张柏芝", age: 45, marry: true },
+    { name: "刘诗诗", age: 42, marry: true },
+    { name: "欧阳娜娜", age: 27, marry: false },
+    { name: "杨超越", age: 24, marry: false },
+    { name: "", age: 999, marry: false }
+];
+const nameList_ = arrObj_.map(({ name }) => name).filter(Boolean);
+// console.log(nameList_);
 let o = {
-    a: 'foo',
+    a: "foo",
     b: 12,
-    c: 'bar'
+    c: "bar"
 };
 // let { a, b } = o;
 // 必须用括号括住这个语句
@@ -85,7 +94,7 @@ let o = {
 // 默认值
 function keepWholeObject(wholeObject) {
     let { a, b = 1001 } = wholeObject;
-    console.log(a, '-----------a');
-    console.log(b, '-----------b');
+    console.log(a, "-----------a");
+    console.log(b, "-----------b");
 }
-keepWholeObject(o);
+// keepWholeObject(o);
