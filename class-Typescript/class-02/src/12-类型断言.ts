@@ -2,8 +2,7 @@ export default {};
 
 /*
 *       类型断言
-*           类型断言（Type Assertion）可以用来手动指定一个值的类型，允许覆盖原本的推断，并且能以任何
-*       想要的方式分析它
+*           类型断言（Type Assertion）可以用来手动指定一个值的类型，允许覆盖原本的推断，并且能以任何想要的方式分析它
 *           通俗来说就是告诉编译器我把当前参数断言(判定)为我需要的某个类型然后进行下一步操作
 *       语法：
 *           方式一：<类型>值
@@ -73,15 +72,15 @@ function isFish(animal: Cat | Fish): boolean | never{
     // animal = animal as Fish;
    return typeof (animal as Fish).swim === 'function'
 }
-console.log(isFish({
-    name: "煤球", run() {
-    }
-}));        // false
+// console.log(isFish({
+//     name: "煤球", run() {
+//     }
+// }));        // false
 
-console.log(isFish({
-    name: "花花", swim() {
-    }
-}));        // true
+// console.log(isFish({
+//     name: "花花", swim() {
+//     }
+// }));        // true
 
 function swim(animal: Cat | Fish){
     // (animal as Fish).swim()
@@ -141,9 +140,9 @@ function isOtherError(error: Error){
 let apiError: ApiError = { message: "", name: "", code: 0 };
 let httpError: HttpError = { message: "", name: "",  statusCode: 200 };
 let otherError: OtherError = { message: "", name: "", otherCode: 500 };
-console.log(isOtherError(apiError),'API');     // false
-console.log(isOtherError(httpError),'HTTP');     // false
-console.log(isOtherError(otherError),'OTHER');     // true
+// console.log(isOtherError(apiError),'API');     // false
+// console.log(isOtherError(httpError),'HTTP');     // false
+// console.log(isOtherError(otherError),'OTHER');     // true
 
 // 将任何一个类型断言为 any  注：它极有可能掩盖了真正的类型错误，所以如果不是非常确定，就不要使用 as any
 const num_01: number = 100;
@@ -173,8 +172,8 @@ function handler(event: Event) {
     const element = event as MouseEvent; // ok
     // const el = event as HTMLElement     // Error: 'Event' 和 'HTMLElement' 中的任何一个都不能赋值给另外一个
     // 使用双重断言
-    const el = (event as unknown) as HTMLElement;
-    const el_ = (event as any) as string;
+    // const el = (event as unknown) as HTMLElement;
+    // const el_ = event as any as string;
 }
 
 /*
@@ -183,3 +182,63 @@ function handler(event: Event) {
 *
 * */
 
+// const testVal: any = 888;
+// console.log(testVal.length)
+
+
+interface Parent {
+    name:  string;
+}
+
+interface Child {
+    name: string;
+    sayHi(): void;
+}
+
+const childPerson: Child = {
+    name:'小明',
+    sayHi: () => {
+        console.log('hello')
+    }
+}
+const parent: Parent = childPerson
+console.log(parent,'---------parent')
+
+const parentPerson: Parent = {
+    name:'张三'
+}
+// const child: Child = parentPerson
+
+function testParent(person: Parent){
+    console.log((person as Child).sayHi)    // undefined
+
+    return (person as Child)
+}
+testParent(parentPerson);
+
+function testChild(person: Child){
+    console.log((person as Parent).name)    // 小明
+}
+testChild(childPerson)
+
+
+
+const testStr: string = 'hello'
+const testNum: number = 266;
+// let val = testStr as number;    // Conversion of type 'string' to type 'number' may be a mistake because neither type sufficiently overlaps with the other
+
+
+function tesFoo(value: number | undefined | null){
+    console.log(value!.toFixed(2))
+}
+
+
+let count: number;
+
+initialize();
+
+console.log(count * 12)
+
+function initialize(){
+    count = 10;
+}

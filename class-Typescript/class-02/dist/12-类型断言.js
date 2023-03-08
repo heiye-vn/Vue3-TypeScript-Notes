@@ -3,8 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {};
 /*
 *       类型断言
-*           类型断言（Type Assertion）可以用来手动指定一个值的类型，允许覆盖原本的推断，并且能以任何
-*       想要的方式分析它
+*           类型断言（Type Assertion）可以用来手动指定一个值的类型，允许覆盖原本的推断，并且能以任何想要的方式分析它
 *           通俗来说就是告诉编译器我把当前参数断言(判定)为我需要的某个类型然后进行下一步操作
 *       语法：
 *           方式一：<类型>值
@@ -44,14 +43,14 @@ function isFish(animal) {
     // animal = animal as Fish;
     return typeof animal.swim === 'function';
 }
-console.log(isFish({
-    name: "煤球", run() {
-    }
-})); // false
-console.log(isFish({
-    name: "花花", swim() {
-    }
-})); // true
+// console.log(isFish({
+//     name: "煤球", run() {
+//     }
+// }));        // false
+// console.log(isFish({
+//     name: "花花", swim() {
+//     }
+// }));        // true
 function swim(animal) {
     // (animal as Fish).swim()
     if (animal.swim) {
@@ -94,9 +93,9 @@ function isOtherError(error) {
 let apiError = { message: "", name: "", code: 0 };
 let httpError = { message: "", name: "", statusCode: 200 };
 let otherError = { message: "", name: "", otherCode: 500 };
-console.log(isOtherError(apiError), 'API'); // false
-console.log(isOtherError(httpError), 'HTTP'); // false
-console.log(isOtherError(otherError), 'OTHER'); // true
+// console.log(isOtherError(apiError),'API');     // false
+// console.log(isOtherError(httpError),'HTTP');     // false
+// console.log(isOtherError(otherError),'OTHER');     // true
 // 将任何一个类型断言为 any  注：它极有可能掩盖了真正的类型错误，所以如果不是非常确定，就不要使用 as any
 const num_01 = 100;
 // num_01.length = 1   // Property 'length' does not exist on type 'number'
@@ -118,11 +117,39 @@ function handler(event) {
     const element = event; // ok
     // const el = event as HTMLElement     // Error: 'Event' 和 'HTMLElement' 中的任何一个都不能赋值给另外一个
     // 使用双重断言
-    const el = event;
-    const el_ = event;
+    // const el = (event as unknown) as HTMLElement;
+    // const el_ = event as any as string;
 }
-/*
-*       判断单个断言和双重断言的使用场景
-*           当 S 类型是 T 类型的子集（子类型），或者 T 类型是 S 类型的子集时，S 能被断言成 T
-*
-* */
+const childPerson = {
+    name: '小明',
+    sayHi: () => {
+        console.log('hello');
+    }
+};
+const parent = childPerson;
+console.log(parent, '---------parent');
+const parentPerson = {
+    name: '张三'
+};
+// const child: Child = parentPerson
+function testParent(person) {
+    console.log(person.sayHi); // undefined
+    return person;
+}
+testParent(parentPerson);
+function testChild(person) {
+    console.log(person.name); // 小明
+}
+testChild(childPerson);
+const testStr = 'hello';
+const testNum = 266;
+// let val = testStr as number;    // Conversion of type 'string' to type 'number' may be a mistake because neither type sufficiently overlaps with the other
+function tesFoo(value) {
+    console.log(value.toFixed(2));
+}
+let count;
+initialize();
+console.log(count * 12);
+function initialize() {
+    count = 10;
+}
