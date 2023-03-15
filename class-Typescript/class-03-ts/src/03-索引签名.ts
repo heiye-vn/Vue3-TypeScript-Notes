@@ -1,10 +1,10 @@
+export default {}
 /*
 *       索引签名
 *           可以用字符串来访问JavaScript的对象（TypeScript中也一样），用来保存对其他对象的引用
 *           在不确定对象的所有属性时可以使用索引签名表示
 *
 *       索引签名属性仅允许某些类型: string、number、symbol、模板字符串以及包含这些的联合类型，使用 number 类型作为属性的索引时，最终会被转为 string 类型，再去索引对象
-*
 * */
 
 interface Person {
@@ -68,3 +68,9 @@ let foo: any = {};
 foo['hello'] = new Foo('World');
 // console.log(foo);
 // foo['hello'].log();
+
+interface StrArray {
+    [index: number]: string
+}
+
+const strArray: StrArray = ['火女', '火男', '男刀', '女刀'];
