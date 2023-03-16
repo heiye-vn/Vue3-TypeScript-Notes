@@ -8,5 +8,15 @@ let jerry = {
         console.log(`老鼠爱吃${food}`);
     }
 };
-// console.log(jerry);
-// jerry.eat("大米");
+// let square = <Square>{};
+// square.sideLength = 100;
+// square.shape ='circle';
+// square.size = 10;
+// square.color = 'gray';
+let square = {
+    size: 60,
+    shape: 'square',
+    color: 'block',
+    sideLength: 700
+};
+console.log(square);

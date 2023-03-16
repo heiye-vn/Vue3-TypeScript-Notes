@@ -32,4 +32,31 @@ let jerry: Mouse = {
 // jerry.eat("大米");
 
 
+// 继承多个接口
+interface Shape {
+    shape: string;
+}
+interface OtherInfo {
+    size: number;
+    color: string;
+}
+interface Square extends Shape, OtherInfo {
+    sideLength: number;
+}
+
+// let square = <Square>{};
+// square.sideLength = 100;
+// square.shape ='circle';
+// square.size = 10;
+// square.color = 'gray';
+
+let square: Square = {
+    size: 60,
+    shape: 'square',
+    color: 'block',
+    sideLength: 700
+}
+
+console.log(square);
+
 
