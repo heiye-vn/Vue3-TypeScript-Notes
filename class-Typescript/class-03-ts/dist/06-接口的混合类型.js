@@ -35,6 +35,7 @@ for (let i = 0; i < 3; i++) {
     addVal4();
 }
 console.log("============================================================================");
+0;
 function addVal5(arg) {
     let sum = function () {
     };

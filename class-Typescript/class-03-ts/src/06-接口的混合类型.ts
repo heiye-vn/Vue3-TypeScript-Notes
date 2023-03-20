@@ -72,7 +72,7 @@ interface CountVal_ {
 
     add(): void;
 }
-
+0
 function addVal5(arg?: number) {
     let sum = <CountVal_>function () {
     };
