@@ -1,3 +1,8 @@
 1. ts中 类型别名（type alias） 和 接口（interface）的区别？（定义，语法，使用场景，扩展性等方面）
 
 2. ts中 接口 和 类 之间的关系？（http://ts.xcatliu.com/advanced/class-and-interfaces.html）
+
+3. ts中的常用关键字整理
+
+
+题目: 不使用排序，找到数组中第二大的元素

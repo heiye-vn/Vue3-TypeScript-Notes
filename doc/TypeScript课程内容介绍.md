@@ -26,6 +26,10 @@
 
 
 
+ https://gitee.com/jiuyueqi/class
+
+
+
 ## 第一章 TypeScript介绍
 
 #### 1.简介
