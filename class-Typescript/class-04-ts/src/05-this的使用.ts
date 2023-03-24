@@ -16,7 +16,7 @@ let poker: Poker = {
     suits: ["hearts", "spades", "diamonds", "clubs"],
     cards: Array(52),
     createCardPicker: function (this: Poker) {
-        // 使用箭头函数可以将当前上下文保存为this
+        // 箭头函数中的this为当前运行时的上下文对象
         return () => {
             let pickedCard = Math.floor(Math.random() * 52);
             let pickedSuit = Math.floor(pickedCard / 13);
