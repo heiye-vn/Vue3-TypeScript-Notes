@@ -12,18 +12,24 @@ let students = [
     { name: "小敏", studentNum: 16310120718, age: 19, className: "高二7班" }
 ];
 console.log(students);
-let c = { name: 'BYD', color: 'white', price: 150000, type: 'autoalarm' };
+let c = { name: "BYD", color: "white", price: 150000, type: "autoalarm" };
 console.log(c);
 class Dog {
-    name = '大黄';
-    color = 'yellow';
+    name = "大黄";
+    foodsType = "meat";
+    color = "yellow";
+    constructor(food) {
+        this.foodsType = food;
+    }
     action() {
-        console.log('sing...');
+        console.log("sing...");
     }
     yelp() {
-        console.log('yelp...');
+        console.log("yelp...");
     }
 }
-let dog = new Dog();
+let dog = new Dog('rice');
+dog.name = '小黑';
+console.log(dog);
 dog.action();
 dog.yelp();

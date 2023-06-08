@@ -52,35 +52,51 @@ console.log(students);
 interface Alarm {
     type: string;
 }
+
 interface Arguments {
     color: string;
     price: number;
 }
+
 interface Car extends Alarm, Arguments {
     name: string;
 }
-let c: Car = { name:'BYD', color:'white', price:150000, type:'autoalarm' };
+
+let c: Car = {name: "BYD", color: "white", price: 150000, type: "autoalarm"};
 console.log(c);
 
 
 interface Animal {
     name: string;
+    foodsType?: string;
+
     yelp(): void;
 }
+
 interface Sing {
     action(): void;
 }
+
 class Dog implements Animal, Sing {
-    name: string = '大黄';
-    color: string = 'yellow';
+    name: string = "大黄";
+    foodsType: string = "meat";
+    color: string = "yellow";
+
+    constructor(food: string) {
+        this.foodsType = food;
+    }
+
     action(): void {
-        console.log('sing...')
+        console.log("sing...");
     }
 
     yelp(): void {
-        console.log('yelp...')
+        console.log("yelp...");
     }
 }
-let dog = new Dog();
+
+let dog = new Dog('rice');
+dog.name = '小黑';
+console.log(dog);
 dog.action();
 dog.yelp();
