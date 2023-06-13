@@ -36,6 +36,24 @@ function createArray_(items, value) {
 // let arr_ = createArray_<number[]>(4, [1,2,3]);
 // let arr_ = createArray_<number>(4, 666);
 let arr_ = createArray_(4, 'apple');
-console.log(arr_);
+// console.log(arr_);
 let lenArr = arr_.map(item => item.length);
-console.log(lenArr);
+// console.log(lenArr);
+// function prop(obj: {}, key: string){
+//     // 返回值均为 any 类型
+//     return obj[key]
+// }
+function prop(obj, key) {
+    return obj[key];
+}
+const todo = {
+    id: 1,
+    text: 'Buy milk',
+    due: new Date()
+};
+const val_id = prop(todo, 'id');
+console.log(val_id);
+const val_text = prop(todo, 'text');
+console.log(val_text);
+const val_due = prop(todo, 'due');
+console.log(val_due);
