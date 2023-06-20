@@ -87,6 +87,8 @@ namespace demo {
     // type-05
     type StartsWith<T extends string, U extends string> = T extends `${U}${infer R}` ? true : false;
 
+    type MyType8 = StartsWith<'write', 'world'>;
+
     // type-06
     type TrimLeft<S extends string> = S extends `${infer L}${infer R}` ? L extends ' ' | '\n' | '\t' ? TrimLeft<R> : S : '';
 
