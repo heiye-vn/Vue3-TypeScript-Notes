@@ -102,7 +102,24 @@ namespace f {
 
 // 7.Exclude<UnionType, ExcludedMembers>：通过从 UnionType 中排除所有可分配给 ExcludedMembers 的联合成员来构造一个新的类型
 namespace g {
+    type Colors = "red" | "blue" | "green";
+    type PrimaryColor = "red" | "blue";
 
+    type SecondaryColors = Exclude<Colors, PrimaryColor>;   // 'green'
+
+    type T0 = Exclude<"a" | "b" | "c", "a">;    // 'b' | 'c'
+    type T1 = Exclude<"a" | "b" | "c", "a" | "b">;    // 'c'
+    type T2 = Exclude<string | number | (() => void), Function>;    // string | number
+}
+
+// 8.Extract<Type, Union>：通过从 Type 中提取所有可赋值给 Union 的联合成员来构造一个新的类型
+namespace h {
+    type Pet = 'dog' | 'tortoise' | 'cat' | 'lizard';
+    type Reptile = 'snake' | 'lizard';
+
+    type Animal = Extract<Pet, Reptile>;    // 'lizard'
+
+    type T2 = Extract<string | number | (() => void), Function>;    // (() => void)
 }
 
 

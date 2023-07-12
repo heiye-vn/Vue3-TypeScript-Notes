@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {};
+let n1 = { name: '大红' };
+let n2 = { name: '二秃子', age: 777 };
+let n3 = { name: '三黑', color: 'black' };
+let val;
+val = n1;
+let t1 = { name: '111', trait: { color: 'red' } };
+let t2 = { name: '222', trait: { color: 'red', age: 20 } };
+let t3 = { name: '333', trait: { code: 333 } };
+let animal = t2;
+console.log(animal);

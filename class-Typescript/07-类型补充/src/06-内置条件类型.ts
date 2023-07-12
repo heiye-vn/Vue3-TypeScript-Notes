@@ -69,6 +69,8 @@ namespace d {
     };
 
     person.getName();
+
+    type T0 = ReturnType<() => string>;     // string
 }
 
 
