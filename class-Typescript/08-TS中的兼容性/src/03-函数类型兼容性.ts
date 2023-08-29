@@ -19,6 +19,8 @@ namespace a {
     let fn2 = (a: string) => {};
 
     fn1 = fn2;
+
+    console.log(fn1);
 }
 
 // 参数类型必须相同
